@@ -102,16 +102,32 @@
       "absent": 8
     }
   ],
-
-  "daysoff": ["2022-04-29", "2022-04-30"],
+  "daysoff": [
+    "2022-04-29",
+    "2022-04-30"
+  ],
   "defaultDeclarations": [
-    {
-      "mondayDeclaration": "OFFICE",
-      "tuesdayDeclaration": "REMOTE",
-      "wednesdayDeclaration": "REMOTE",
-      "thursdayDeclaration": "REMOTE",
-      "fridayDeclaration": "OFFICE",
-      "id": 1
-    }
+    [
+      {
+        "day": 1,
+        "isRemote": false
+      },
+      {
+        "day": 2,
+        "isRemote": true
+      },
+      {
+        "day": 3,
+        "isRemote": true
+      },
+      {
+        "day": 4,
+        "isRemote": false
+      },
+      {
+        "day": 5,
+        "isRemote": false
+      }
+    ]
   ]
 }

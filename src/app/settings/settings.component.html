@@ -1,52 +1,81 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-    </div>
+    <div class="col"></div>
     <div class="col-6" style="padding-top: 40px">
-      <h3 style="text-align: center; padding-bottom: 20px">Ustaw domyślne dni zdalne i stacjonarne</h3>
+      <h3 style="text-align: center; padding-bottom: 20px">
+        Ustaw domyślne dni zdalne i stacjonarne
+      </h3>
       <table class="table table-striped">
         <thead>
-        <tr>
-          <th scope="col">Dzień tygodnia</th>
-          <th scope="col">Praca zdalna/Praca stacjonarna</th>
-        </tr>
+          <tr>
+            <th scope="col">Dzień tygodnia</th>
+            <th scope="col">Praca zdalna/Praca stacjonarna</th>
+          </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>
-            poniedzialek<br>
-            wtorek<br>
-            sroda<br>
-            czwartek<br>
-            piatek<br>
-          </td>
-          <td>
-            <div class="form-check form-switch">
-              <input class="form-check-input" (click)="changeMondayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            </div>
-            <div class="form-check form-switch">
-              <input class="form-check-input" (click)="changeTuesdayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            </div>
-            <div class="form-check form-switch">
-              <input class="form-check-input" (click)="changeWednesdayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            </div>
-            <div class="form-check form-switch">
-              <input class="form-check-input" (click)="changeThursdayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            </div>
-            <div class="form-check form-switch">
-              <input class="form-check-input" (click)="changeFridayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            </div>
-          </td>
-        </tr>
+          <tr>
+            <td>
+              poniedzialek<br />
+              wtorek<br />
+              sroda<br />
+              czwartek<br />
+              piatek<br />
+            </td>
+            <td>
+              <form [formGroup]="form">
+                <div class="form-check form-switch">
+                  <input
+                    formControlName="monday"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="flexSwitchCheckDefault"
+                  />
+                </div>
+                <div class="form-check form-switch">
+                  <input
+                    formControlName="tuesday"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="flexSwitchCheckDefault"
+                  />
+                </div>
+                <div class="form-check form-switch">
+                  <input
+                    formControlName="wednesday"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="flexSwitchCheckDefault"
+                  />
+                </div>
+                <div class="form-check form-switch">
+                  <input
+                    formControlName="thursday"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="flexSwitchCheckDefault"
+                  />
+                </div>
+                <div class="form-check form-switch">
+                  <input
+                    formControlName="friday"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="flexSwitchCheckDefault"
+                  />
+                </div>
+              </form>
+            </td>
+          </tr>
         </tbody>
       </table>
 
       <button (click)="sendDefaultDeclarations()">Send</button>
     </div>
-    <div class="col">
-    </div>
+    <div class="col"></div>
   </div>
 </div>
-
-
-
