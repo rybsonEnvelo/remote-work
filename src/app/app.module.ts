@@ -16,6 +16,10 @@ import { FilterComponent } from './summary/filter/filter.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MainModalComponent } from './main/main-modal/main-modal.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 const routes = [
   { path: '', component: MainComponent },
   { path: 'summary', component: SummaryComponent },
@@ -42,6 +46,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     ReactiveFormsModule,
     NgbModule,
     FullCalendarModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

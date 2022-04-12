@@ -94,6 +94,31 @@
       "day": "2022-03-31",
       "declarationType": "ABSENT",
       "id": 19
+    },
+    {
+      "day": "2022-04-20",
+      "declarationType": "REMOTE",
+      "id": 20
+    },
+    {
+      "day": "2022-04-11",
+      "declarationType": "OFFICE",
+      "id": 21
+    },
+    {
+      "day": "2022-04-20",
+      "declarationType": "OFFICE",
+      "id": 22
+    },
+    {
+      "day": "2022-04-28",
+      "declarationType": "OFFICE",
+      "id": 23
+    },
+    {
+      "day": "2022-04-29",
+      "declarationType": "ABSENT",
+      "id": 24
     }
   ],
   "summary": [
