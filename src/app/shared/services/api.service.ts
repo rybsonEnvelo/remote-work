@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Declaration } from '../Interfaces/Declaration.model';
+import { DefaultDeclaration } from '../Interfaces/DefaultDeclaration.model';
 import { Summary } from '../Interfaces/Summary.model';
 @Injectable({
   providedIn: 'root',
@@ -16,5 +17,12 @@ export class ApiService {
 
   getSummary() {
     return this.http.get<Summary>(`${this.API_URL}summary`);
+  }
+
+  postDefultDeclarations(defaultDeclaration: DefaultDeclaration) {
+    return this.http.post(
+      `${this.API_URL}defaultdeclarations`,
+      defaultDeclaration
+    );
   }
 }

@@ -21,7 +21,6 @@
       "declarationType": "REMOTE"
     }
   ],
-
   "summary": [
     {
       "date": "12-04-2022",
@@ -46,6 +45,16 @@
       "remote": 22,
       "office": 3,
       "absent": 8
+    }
+  ],
+  "defaultDeclarations": [
+    {
+      "mondayDeclaration": "OFFICE",
+      "tuesdayDeclaration": "REMOTE",
+      "wednesdayDeclaration": "REMOTE",
+      "thursdayDeclaration": "REMOTE",
+      "fridayDeclaration": "OFFICE",
+      "id": 1
     }
   ]
 }
