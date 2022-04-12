@@ -16,5 +16,11 @@ export class MainComponent implements OnInit {
     initialView: 'dayGridMonth',
     locale: 'pl',
     locales: [plLocale],
+    height: 650,
+    events: [
+      { title: 'event 1', date: '2022-04-01' },
+      { title: 'event 2', date: '2019-04-02' },
+      //tu przekzywać eventy
+    ],
   };
 }
