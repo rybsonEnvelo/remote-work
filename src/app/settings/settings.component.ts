@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { DefaultDeclaration } from '../shared/Interfaces/DefaultDeclaration.model';
 import { ApiService } from '../shared/services/api.service';
 
@@ -16,7 +17,7 @@ export class SettingsComponent implements OnInit {
     fridayDeclaration: 'OFFICE',
   };
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private toastr: ToastrService) {}
 
   ngOnInit(): void {}
 
@@ -64,5 +65,10 @@ export class SettingsComponent implements OnInit {
     this.apiService
       .postDefultDeclarations(this.defaultDeclarations)
       .subscribe();
+
+    this.toastr.success(
+      'Zadeklarowano format pracy na najbliższy miesiąc',
+      'Sukces!'
+    );
   }
 }
