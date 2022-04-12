@@ -74,6 +74,66 @@
       "day": "2022-04-24",
       "declarationType": "OFFICE",
       "id": 15
+    },
+    {
+      "day": "2022-04-09",
+      "declarationType": "ABSENT",
+      "id": 16
+    },
+    {
+      "day": "2022-04-16",
+      "declarationType": "REMOTE",
+      "id": 17
+    },
+    {
+      "day": "2022-04-17",
+      "declarationType": "REMOTE",
+      "id": 18
+    },
+    {
+      "day": "2022-04-14",
+      "declarationType": "OFFICE",
+      "id": 19
+    },
+    {
+      "day": "2022-04-12",
+      "declarationType": "ABSENT",
+      "id": 20
+    },
+    {
+      "day": "2022-04-11",
+      "declarationType": "REMOTE",
+      "id": 21
+    },
+    {
+      "day": "2022-04-07",
+      "declarationType": "REMOTE",
+      "id": 22
+    },
+    {
+      "day": "2022-04-11",
+      "declarationType": "REMOTE",
+      "id": 23
+    },
+    {
+      "day": "2022-04-07",
+      "declarationType": "REMOTE",
+      "id": 24
+    },
+    {
+      "day": "2022-04-19",
+      "declarationType": "OFFICE",
+      "id": 25
+    },
+    {
+      "day": "2022-04-18",
+      "declarationType": "ABSENT",
+      "id": 26
+    },
+    {
+      "day": "2022-04-06",
+      "declarationType": "ABSENT",
+      "id": 27
     }
   ],
   "summary": [
@@ -109,24 +169,24 @@
   "defaultDeclarations": [
     [
       {
-        "day": 1,
-        "isRemote": false
+        "day": "monday",
+        "declarationType": "OFFICE"
       },
       {
-        "day": 2,
-        "isRemote": true
+        "day": "tuesday",
+        "declarationType": "REMOTE"
       },
       {
-        "day": 3,
-        "isRemote": true
+        "day": "wednesday",
+        "declarationType": "REMOTE"
       },
       {
-        "day": 4,
-        "isRemote": false
+        "day": "thursday",
+        "declarationType": "OFFICE"
       },
       {
-        "day": 5,
-        "isRemote": false
+        "day": "friday",
+        "declarationType": "OFFICE"
       }
     ]
   ]
