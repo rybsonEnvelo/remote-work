@@ -4,6 +4,7 @@ import { ApiService } from '../shared/services/api.service';
 import { CalendarEvent } from '../shared/Interfaces/CalendarEvent.model';
 import { Declaration } from '../shared/Interfaces/Declaration.model';
 import { DeclarationType } from '../shared/enums/DeclarationType.enum';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class UserDeclarationsService {
     return this.userDeclarations.asObservable();
   }
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private toastr: ToastrService) {
     this.getUserDeclarations().subscribe((e) => this.userDeclarations.next(e));
   }
 
@@ -57,10 +58,13 @@ export class UserDeclarationsService {
           newCalendarEvent,
         ];
         this.userDeclarations.next(newValue);
+        this.toastr.success('Sukaces!');
       },
       error: () => {
-        console.log('errror');
-        //display error
+        this.toastr.error(
+          'Nie udało się dodać poprawnie.',
+          'Spróbuj ponownie.'
+        );
       },
     });
   }
