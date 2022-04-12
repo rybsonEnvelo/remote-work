@@ -19,12 +19,13 @@ export class ApiService {
     return this.http.get<Summary>(`${this.API_URL}summary`);
   }
 
-  postDefultDeclarations(defaultDeclaration: DefaultDeclaration) {
+  postDefultDeclarations(defaultDeclarations: DefaultDeclaration[]) {
     return this.http.post(
       `${this.API_URL}defaultdeclarations`,
-      defaultDeclaration
+      defaultDeclarations
     );
   }
+
   addUserDeclaration(declaration: Partial<Declaration>) {
     return this.http.post<Declaration>(
       `${this.API_URL}declarations`,
