@@ -34,7 +34,6 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     FilterComponent,
     SettingsComponent,
     MainModalComponent,
-
   ],
   imports: [
     BrowserModule,

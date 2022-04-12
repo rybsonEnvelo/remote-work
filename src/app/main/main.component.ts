@@ -44,6 +44,8 @@ export class MainComponent implements OnInit, OnDestroy {
       height: 650,
       events: [...this.calendarEvents],
       dateClick: this.open.bind(this),
+      showNonCurrentDates: false,
+      fixedWeekCount: false,
     };
   }
 
