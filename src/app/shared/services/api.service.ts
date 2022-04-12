@@ -10,6 +10,6 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getUserDeclarations() {
-    return this.http.get<Declaration>(`${this.API_URL}events`);
+    return this.http.get<Declaration[]>(`${this.API_URL}events`);
   }
 }
