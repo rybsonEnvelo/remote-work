@@ -10,10 +10,12 @@ import { RouterModule } from '@angular/router';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { SummaryComponent } from './summary/summary.component';
+import { FilterComponent } from './summary/filter/filter.component';
 
 const routes = [
   { path: '', component: MainComponent },
-  { path: 'summary', component: MainComponent },
+  { path: 'summary', component: SummaryComponent },
   { path: 'freedays', component: MainComponent },
   { path: 'declarations', component: MainComponent },
   { path: 'settings', component: MainComponent },
@@ -21,7 +23,13 @@ const routes = [
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MainComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MainComponent,
+    SummaryComponent,
+    FilterComponent,
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
