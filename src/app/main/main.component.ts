@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CalendarOptions } from '@fullcalendar/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Calendar, CalendarOptions } from '@fullcalendar/core';
 import plLocale from '@fullcalendar/core/locales/pl';
+import { DateClickArg } from '@fullcalendar/interaction';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
 import { CalendarEvent } from '../shared/Interfaces/CalendarEvent.model';
 import { MainModalComponent } from './main-modal/main-modal.component';
 import { UserDeclarationsService } from './user-declarations.service';
@@ -11,19 +13,27 @@ import { UserDeclarationsService } from './user-declarations.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
   public calendarOptions!: CalendarOptions;
   private calendarEvents!: CalendarEvent[];
+  private declarationsSubscription!: Subscription;
 
   constructor(
     private userDeclarationsService: UserDeclarationsService,
     private modalService: NgbModal
   ) {}
+
   ngOnInit(): void {
-    this.userDeclarationsService.getUserDeclarations().subscribe((events) => {
-      this.calendarEvents = events;
-      this.setCalendarOptions();
+    this.userDeclarationsService.userDeclarations$.subscribe((events) => {
+      if (events) {
+        this.calendarEvents = events;
+        this.setCalendarOptions();
+      }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.declarationsSubscription.unsubscribe();
   }
 
   setCalendarOptions() {
@@ -33,16 +43,16 @@ export class MainComponent implements OnInit {
       locales: [plLocale],
       height: 650,
       events: [...this.calendarEvents],
-      eventClick: function (args) {
-        console.log(args);
-        // open();
-      },
+      dateClick: this.open.bind(this),
     };
   }
 
-  open() {
+  open(args: DateClickArg) {
     const modalRef = this.modalService.open(MainModalComponent);
-    modalRef.componentInstance.my_modal_title = 'I your title';
-    modalRef.componentInstance.my_modal_content = 'I am your content';
+    const formattedDate = `${args.date.getFullYear()}-${
+      args.date.getMonth() + 1
+    }-${args.date.getDate()}`.replace(/(^|\D)(\d)(?!\d)/g, '$10$2');
+
+    modalRef.componentInstance.date = formattedDate;
   }
 }

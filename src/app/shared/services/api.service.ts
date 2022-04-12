@@ -11,10 +11,17 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getUserDeclarations() {
-    return this.http.get<Declaration[]>(`${this.API_URL}events`);
+    return this.http.get<Declaration[]>(`${this.API_URL}declarations`);
   }
 
   getSummary() {
     return this.http.get<Summary>(`${this.API_URL}summary`);
+  }
+
+  addUserDeclaration(declaration: Partial<Declaration>) {
+    return this.http.post<Declaration>(
+      `${this.API_URL}declarations`,
+      declaration
+    );
   }
 }
