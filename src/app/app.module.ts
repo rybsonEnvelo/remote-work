@@ -13,13 +13,14 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { SummaryComponent } from './summary/summary.component';
 import { FilterComponent } from './summary/filter/filter.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes = [
   { path: '', component: MainComponent },
   { path: 'summary', component: SummaryComponent },
   { path: 'freedays', component: MainComponent },
   { path: 'declarations', component: MainComponent },
-  { path: 'settings', component: MainComponent },
+  { path: 'settings', component: SettingsComponent },
 ];
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
@@ -30,6 +31,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     MainComponent,
     SummaryComponent,
     FilterComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
