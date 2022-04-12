@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,12 +11,10 @@ import { RouterModule } from '@angular/router';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { SummaryComponent } from './summary/summary.component';
-import { FilterComponent } from './summary/filter/filter.component';
 
 const routes = [
   { path: '', component: MainComponent },
-  { path: 'summary', component: SummaryComponent },
+  { path: 'summary', component: MainComponent },
   { path: 'freedays', component: MainComponent },
   { path: 'declarations', component: MainComponent },
   { path: 'settings', component: MainComponent },
@@ -23,19 +22,14 @@ const routes = [
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    MainComponent,
-    SummaryComponent,
-    FilterComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent, MainComponent],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
     FullCalendarModule,
-    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent],

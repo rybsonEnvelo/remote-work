@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core';
 import plLocale from '@fullcalendar/core/locales/pl';
+import { UserDeclarationsService } from './user-declarations.service';
 
 @Component({
   selector: 'app-main',
@@ -8,9 +9,11 @@ import plLocale from '@fullcalendar/core/locales/pl';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  constructor() {}
+  constructor(private userDeclarationsService: UserDeclarationsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userDeclarationsService.getUserDeclarations().subscribe(console.log);
+  }
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',

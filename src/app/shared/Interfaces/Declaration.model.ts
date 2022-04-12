@@ -4,5 +4,6 @@ export interface Declaration {
   id: number;
   // user: User;
   // day: ɵExtraLocaleDataIndex;
-  declarationType: DeclarationType;
+  // declarationType: DeclarationType;
+  // date: string;
 }
