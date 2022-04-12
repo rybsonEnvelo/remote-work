@@ -2,18 +2,23 @@
   "events": [
     {
       "id": 1,
-      "date": "2022-04-12",
-      "isRemote": true
+      "day": "2022-04-12",
+      "declarationType": "REMOTE"
     },
     {
       "id": 2,
-      "date": "2022-04-22",
-      "isRemote": false
+      "day": "2022-04-22",
+      "declarationType": "OFFICE"
     },
     {
       "id": 3,
-      "date": "2022-04-02",
-      "isRemote": true
+      "day": "2022-04-02",
+      "declarationType": "ABSENT"
+    },
+    {
+      "id": 4,
+      "day": "2022-04-17",
+      "declarationType": "REMOTE"
     }
   ]
 }
