@@ -31,4 +31,8 @@ export class ApiService {
       declaration
     );
   }
+
+  getDaysOff() {
+    return this.http.get<string[]>(`${this.API_URL}daysoff`);
+  }
 }
