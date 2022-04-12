@@ -12,21 +12,41 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let summary of daysOfWeek; index as i">
+        <tr>
           <td>
-            {{ summary.day }}
+            poniedzialek<br>
+            wtorek<br>
+            sroda<br>
+            czwartek<br>
+            piatek<br>
           </td>
           <td>
             <div class="form-check form-switch">
-              <input class="form-check-input" [formGroup]="form" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              <input class="form-check-input" (click)="changeMondayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" (click)="changeTuesdayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" (click)="changeWednesdayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" (click)="changeThursdayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" (click)="changeFridayDeclaration()" type="checkbox" role="switch" id="flexSwitchCheckDefault">
             </div>
           </td>
         </tr>
         </tbody>
       </table>
+
+      <button (click)="sendDefaultDeclarations()">Send</button>
     </div>
     <div class="col">
     </div>
   </div>
 </div>
+
+
 

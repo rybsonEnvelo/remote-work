@@ -102,5 +102,16 @@
       "absent": 8
     }
   ],
-  "daysoff": ["2022-04-29", "2022-04-30"]
+
+  "daysoff": ["2022-04-29", "2022-04-30"],
+  "defaultDeclarations": [
+    {
+      "mondayDeclaration": "OFFICE",
+      "tuesdayDeclaration": "REMOTE",
+      "wednesdayDeclaration": "REMOTE",
+      "thursdayDeclaration": "REMOTE",
+      "fridayDeclaration": "OFFICE",
+      "id": 1
+    }
+  ]
 }
