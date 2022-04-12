@@ -15,5 +15,32 @@
       "date": "2022-04-02",
       "isRemote": true
     }
+  ],
+
+  "summary": [
+    {
+      "date": "12-04-2022",
+      "remote": 15,
+      "office": 15,
+      "absent": 3
+    },
+    {
+      "date": "12-04-2022",
+      "remote": 26,
+      "office": 5,
+      "absent": 1
+    },
+    {
+      "date": "14-04-2022",
+      "remote": 15,
+      "office": 18,
+      "absent": 0
+    },
+    {
+      "date": "12-04-2022",
+      "remote": 22,
+      "office": 3,
+      "absent": 8
+    }
   ]
 }
