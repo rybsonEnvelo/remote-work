@@ -11,13 +11,19 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UserDeclarationsService {
   userDeclarations = new BehaviorSubject<CalendarEvent[] | null>(null);
+  daysOff = new BehaviorSubject<string[]>([]);
 
   get userDeclarations$() {
     return this.userDeclarations.asObservable();
   }
 
+  get daysOff$() {
+    return this.daysOff.asObservable();
+  }
+
   constructor(private apiService: ApiService, private toastr: ToastrService) {
     this.getUserDeclarations().subscribe((e) => this.userDeclarations.next(e));
+    this.getDaysOff().subscribe((e) => this.daysOff.next(e));
   }
 
   getUserDeclarations(): Observable<CalendarEvent[]> {
@@ -45,6 +51,8 @@ export class UserDeclarationsService {
         declaration.declarationType === DeclarationType.ABSENT
           ? 'nieobecny'
           : 'w biurze',
+      type: declaration.declarationType,
+      id: declaration.id,
     } as CalendarEvent;
   }
 
@@ -67,5 +75,9 @@ export class UserDeclarationsService {
         );
       },
     });
+  }
+
+  getDaysOff() {
+    return this.apiService.getDaysOff();
   }
 }
