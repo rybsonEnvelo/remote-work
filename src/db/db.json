@@ -1,5 +1,5 @@
 {
-  "events": [
+  "declarations": [
     {
       "id": 1,
       "day": "2022-04-12",
@@ -19,9 +19,73 @@
       "id": 4,
       "day": "2022-04-17",
       "declarationType": "REMOTE"
+    },
+    {
+      "day": "2022-04-14",
+      "declarationType": "ABSENT",
+      "id": 5
+    },
+    {
+      "day": "2022-04-15",
+      "declarationType": "OFFICE",
+      "id": 6
+    },
+    {
+      "day": "2022-04-16",
+      "declarationType": "OFFICE",
+      "id": 7
+    },
+    {
+      "day": "2022-04-13",
+      "declarationType": "OFFICE",
+      "id": 8
+    },
+    {
+      "day": "2022-04-05",
+      "declarationType": "ABSENT",
+      "id": 9
+    },
+    {
+      "day": "2022-04-06",
+      "declarationType": "OFFICE",
+      "id": 10
+    },
+    {
+      "day": "2022-04-07",
+      "declarationType": "OFFICE",
+      "id": 11
+    },
+    {
+      "day": "2022-04-08",
+      "declarationType": "OFFICE",
+      "id": 12
+    },
+    {
+      "day": "2022-04-26",
+      "declarationType": "OFFICE",
+      "id": 13
+    },
+    {
+      "day": "2022-04-21",
+      "declarationType": "OFFICE",
+      "id": 14
+    },
+    {
+      "day": "2022-04-10",
+      "declarationType": "REMOTE",
+      "id": 15
+    },
+    {
+      "day": "2022-04-23",
+      "declarationType": "OFFICE",
+      "id": 16
+    },
+    {
+      "day": "2022-04-12",
+      "declarationType": "OFFICE",
+      "id": 17
     }
   ],
-
   "summary": [
     {
       "date": "12-04-2022",
