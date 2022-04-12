@@ -1,0 +1,19 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "date": "2022-04-12",
+      "isRemote": true
+    },
+    {
+      "id": 2,
+      "date": "2022-04-22",
+      "isRemote": false
+    },
+    {
+      "id": 3,
+      "date": "2022-04-02",
+      "isRemote": true
+    }
+  ]
+}
