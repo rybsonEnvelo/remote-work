@@ -14,6 +14,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { SummaryComponent } from './summary/summary.component';
 import { FilterComponent } from './summary/filter/filter.component';
 import { SettingsComponent } from './settings/settings.component';
+import { MainModalComponent } from './main/main-modal/main-modal.component';
 
 const routes = [
   { path: '', component: MainComponent },
@@ -32,6 +33,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     SummaryComponent,
     FilterComponent,
     SettingsComponent,
+    MainModalComponent,
+
   ],
   imports: [
     BrowserModule,
