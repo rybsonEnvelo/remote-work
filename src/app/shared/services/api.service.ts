@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Declaration } from '../Interfaces/Declaration.model';
+import { Summary } from '../Interfaces/Summary.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,5 +12,9 @@ export class ApiService {
 
   getUserDeclarations() {
     return this.http.get<Declaration>(`${this.API_URL}events`);
+  }
+
+  getSummary() {
+    return this.http.get<Summary>(`${this.API_URL}summary`);
   }
 }

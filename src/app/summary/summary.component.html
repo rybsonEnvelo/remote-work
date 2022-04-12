@@ -12,14 +12,13 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let country of countries; index as i">
+  <tr *ngFor="let summary of summaryInformations; index as i">
     <td>
-      {{ country.date }}
+      {{ summary.date }}
     </td>
-    <td>{{ country.stationary | number }}</td>
-    <td>{{ country.remote | number }}</td>
-    <td>{{ country.absent | number }}</td>
-
+    <td>{{ summary.office | number }}</td>
+    <td>{{ summary.remote | number }}</td>
+    <td>{{ summary.absent | number }}</td>
   </tr>
   </tbody>
 </table>
