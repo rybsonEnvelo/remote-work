@@ -1,23 +1,25 @@
 <div class="modal-header">
-  <h4 class="modal-title">{{ my_modal_title }}</h4>
-  <button
-    type="button"
-    class="close"
-    aria-label="Close"
-    (click)="activeModal.dismiss('Cross click')"
-  >
-    <span aria-hidden="true">&times;</span>
-  </button>
+  <h4 class="modal-title">{{ date }}</h4>
 </div>
 <div class="modal-body">
-  <p>{{ my_modal_content }}</p>
-</div>
-<div class="modal-footer">
-  <button
-    type="button"
-    class="btn btn-outline-dark"
-    (click)="activeModal.close('Close click')"
-  >
-    Close
-  </button>
+  <form [formGroup]="form">
+    <div class="row">
+      <select formControlName="select" class="form-select">
+        <option [ngValue]="null">Wybierz rodzaj pracy</option>
+        <option value="REMOTE">Zdalnie</option>
+        <option value="OFFICE">Stacjonarnie</option>
+        <option value="ABSENT">Nieobecny</option>
+      </select>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        [disabled]="!form.valid"
+        class="btn btn-outline-dark"
+        (click)="close()"
+      >
+        Zapisz
+      </button>
+    </div>
+  </form>
 </div>

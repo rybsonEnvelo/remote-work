@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserDeclarationsService } from '../user-declarations.service';
 
 @Component({
   selector: 'app-main-modal',
@@ -7,10 +9,31 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./main-modal.component.scss'],
 })
 export class MainModalComponent implements OnInit {
-  @Input() my_modal_title = '';
-  @Input() my_modal_content = '';
+  @Input() date = '';
+  form!: FormGroup;
 
-  constructor(public activeModal: NgbActiveModal) {}
+  get select() {
+    return this.form.get('select');
+  }
 
-  ngOnInit() {}
+  constructor(
+    public activeModal: NgbActiveModal,
+    private userDeclarationsService: UserDeclarationsService,
+    private formBuilder: FormBuilder
+  ) {}
+
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      select: [null, Validators.required],
+    });
+  }
+
+  close() {
+    this.activeModal.close('Close click');
+
+    this.userDeclarationsService.addUserDeclaration({
+      day: this.date,
+      declarationType: this.select!.value,
+    });
+  }
 }
