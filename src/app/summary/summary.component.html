@@ -1,0 +1,25 @@
+<h1 style="text-align: center">Podsumowanie</h1>
+
+<app-filter></app-filter>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Data</th>
+    <th scope="col">Deklaracja stacjonarna</th>
+    <th scope="col">Deklaracja zdalna</th>
+    <th scope="col">Nieobecni</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let country of countries; index as i">
+    <td>
+      {{ country.date }}
+    </td>
+    <td>{{ country.stationary | number }}</td>
+    <td>{{ country.remote | number }}</td>
+    <td>{{ country.absent | number }}</td>
+
+  </tr>
+  </tbody>
+</table>

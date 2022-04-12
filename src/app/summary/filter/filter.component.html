@@ -1,0 +1,11 @@
+<select class="form-select" aria-label="Default select example">
+  <option *ngFor="let option of dateMonthOptions" [value]="option.date">
+    {{ option.date }}
+  </option>
+</select>
+
+<select class="form-select" aria-label="Default select example">
+  <option *ngFor="let option of dateYearOptions" [value]="option.date">
+    {{ option.date }}
+  </option>
+</select>
