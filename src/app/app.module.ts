@@ -19,11 +19,12 @@ import { MainModalComponent } from './main/main-modal/main-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { DaysOffComponent } from './days-off/days-off.component';
 
 const routes = [
   { path: '', component: MainComponent },
   { path: 'summary', component: SummaryComponent },
-  { path: 'freedays', component: MainComponent },
+  { path: 'freedays', component: DaysOffComponent },
   { path: 'declarations', component: MainComponent },
   { path: 'settings', component: SettingsComponent },
 ];
@@ -38,6 +39,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     FilterComponent,
     SettingsComponent,
     MainModalComponent,
+    DaysOffComponent,
   ],
   imports: [
     BrowserModule,
