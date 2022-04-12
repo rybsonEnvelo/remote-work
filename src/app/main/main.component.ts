@@ -17,10 +17,9 @@ import { UserDeclarationsService } from './user-declarations.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
-export class MainComponent implements OnInit, OnDestroy {
+export class MainComponent implements OnInit {
   public calendarOptions!: CalendarOptions;
   private calendarEvents!: CalendarEvent[];
-  private declarationsSubscription!: Subscription;
   private disallowedDays: string[] = [];
 
   constructor(
@@ -39,10 +38,6 @@ export class MainComponent implements OnInit, OnDestroy {
     this.userDeclarationsService.daysOff$.subscribe(
       (dates) => (this.disallowedDays = dates)
     );
-  }
-
-  ngOnDestroy(): void {
-    this.declarationsSubscription.unsubscribe();
   }
 
   setCalendarOptions() {

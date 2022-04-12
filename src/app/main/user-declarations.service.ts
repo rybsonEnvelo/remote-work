@@ -59,13 +59,15 @@ export class UserDeclarationsService {
   addUserDeclaration(declaration: Partial<Declaration>) {
     this.apiService.addUserDeclaration(declaration).subscribe({
       next: (declaration) => {
-        const newCalendarEvent =
-          this.convertDeclarationToCalendarEvent(declaration);
-        const newValue = [
-          ...this.userDeclarations.getValue()!,
-          newCalendarEvent,
-        ];
-        this.userDeclarations.next(newValue);
+        if (declaration.declarationType !== DeclarationType.REMOTE) {
+          const newCalendarEvent =
+            this.convertDeclarationToCalendarEvent(declaration);
+          const newValue = [
+            ...this.userDeclarations.getValue()!,
+            newCalendarEvent,
+          ];
+          this.userDeclarations.next(newValue);
+        }
         this.toastr.success('Sukaces!');
       },
       error: () => {
