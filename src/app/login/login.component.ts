@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
         );
       });
       if (user) {
-        alert('zalogowano');
         this.loginForm.reset();
         this.router.navigate(['dashboard/main']);
       } else {

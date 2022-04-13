@@ -28,7 +28,13 @@
           />
         </div>
         <br />
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button
+          [disabled]="!loginForm.valid"
+          type="submit"
+          class="btn btn-primary"
+        >
+          Login
+        </button>
       </form>
     </div>
     <div class="col"></div>

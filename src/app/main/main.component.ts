@@ -59,7 +59,6 @@ export class MainComponent implements OnInit {
       showNonCurrentDates: false,
       fixedWeekCount: false,
       select: (args) => {
-        console.log(args);
         if (this.hasDateEvents(args.startStr))
           this.addDeclaration(args.startStr);
       },
