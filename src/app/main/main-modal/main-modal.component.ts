@@ -43,9 +43,6 @@ export class MainModalComponent implements OnInit {
   close() {
     this.activeModal.close('Close click');
 
-    if (this.currentEvent) {
-    }
-
     this.userDeclarationsService.addUserDeclaration({
       day: this.date,
       declarationType: this.select!.value,

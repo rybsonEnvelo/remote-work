@@ -23,7 +23,15 @@ export class UserDeclarationsService {
 
   constructor(private apiService: ApiService, private toastr: ToastrService) {
     this.getUserDeclarations().subscribe((e) => this.userDeclarations.next(e));
-    this.getDaysOff().subscribe((e) => this.daysOff.next(e));
+    this.getDaysOff()
+      .pipe(
+        map((e) => {
+          return e.map((date) => {
+            return date.day;
+          });
+        })
+      )
+      .subscribe((e) => this.daysOff.next(e));
   }
 
   getUserDeclarations(): Observable<CalendarEvent[]> {

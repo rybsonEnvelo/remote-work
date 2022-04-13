@@ -134,6 +134,11 @@
       "day": "2022-04-06",
       "declarationType": "ABSENT",
       "id": 27
+    },
+    {
+      "day": "2022-04-07",
+      "declarationType": "OFFICE",
+      "id": 28
     }
   ],
   "summary": [
@@ -163,8 +168,14 @@
     }
   ],
   "daysoff": [
-    "2022-04-29",
-    "2022-04-30"
+    {
+      "id": 1,
+      "day": "2022-04-28"
+    },
+    {
+      "id": 3,
+      "day": "2022-04-29"
+    }
   ],
   "defaultDeclarations": [
     [
