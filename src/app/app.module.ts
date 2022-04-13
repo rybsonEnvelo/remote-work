@@ -39,6 +39,7 @@ const routes = [
       { path: 'settings', component: SettingsComponent },
     ],
   },
+];
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 @NgModule({
