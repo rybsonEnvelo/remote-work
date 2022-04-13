@@ -177,6 +177,17 @@
       "day": "2022-04-29"
     }
   ],
+
+  "users": [
+    {
+      "username": "jacek.kowalski",
+      "email": "jacek.kowalski@envelo.pl",
+      "firstName": "Jacek",
+      "lastName": "Kowalski",
+      "password": "test111"
+    }
+    ],
+
   "defaultDeclarations": [
     [
       {
@@ -200,5 +211,5 @@
         "declarationType": "OFFICE"
       }
     ]
-  ]
+    ]
 }
