@@ -29,6 +29,11 @@
       "day": "2022-04-07",
       "declarationType": "ABSENT",
       "id": 6
+    },
+    {
+      "day": "2022-04-06",
+      "declarationType": "OFFICE",
+      "id": 7
     }
   ],
   "summary": [

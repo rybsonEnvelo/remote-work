@@ -1,44 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="col"></div>
-    <div class="col-6">
-      <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Username</label>
-          <input
-            formControlName="username"
-            style="width: 50%"
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter username"
-          />
-        </div>
-        <br />
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input
-            formControlName="password"
-            style="width: 50%"
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-          />
-        </div>
-        <br />
-        <button
-          [disabled]="!loginForm.valid"
-          type="submit"
-          class="btn btn-primary"
-        >
-          Login
-        </button>
-      </form>
-    </div>
-    <div class="col"></div>
-  </div>
+<img src="../../assets/images/envelo_logo.png" alt="Logo" />
+
+<div class="containerr">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <input
+      formControlName="username"
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Nazwa użytkownika"
+    />
+
+    <input
+      formControlName="password"
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="Hasło"
+    />
+
+    <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">
+      Login
+    </button>
+  </form>
 
   <p>
     Dane do logowania:<br />

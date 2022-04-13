@@ -1,0 +1,45 @@
+@use "../../sass/variables.scss" as *;
+
+.containerr {
+  width: min(36rem, 90%);
+  margin: 5rem auto;
+  background-color: rgb(224, 224, 224);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+input {
+  width: 140%;
+
+  input {
+    width: 100%;
+  }
+}
+
+img {
+  width: 5rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  transition: 200ms all;
+
+  &:hover {
+    background-color: $color-primary--dark;
+  }
+}
