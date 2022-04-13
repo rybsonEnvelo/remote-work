@@ -3,3 +3,37 @@
   width: min(100rem, 90%);
   height: 100%;
 }
+
+.legend {
+  display: flex;
+  gap: 2rem;
+  height: 2.5rem;
+}
+
+.element {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.circle {
+  width: 1rem;
+  height: 1rem;
+
+  &-blue {
+    background-color: #6161ff;
+  }
+
+  &-orange {
+    background-color: #ff6161;
+  }
+
+  &-white {
+    border: 1px #b1b1b1 solid;
+  }
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}

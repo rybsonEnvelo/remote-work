@@ -195,9 +195,24 @@
     {
       "day": "2022-04-03",
       "id": 8
+    },
+    {
+      "day": "2022-04-06",
+      "id": 9
+    },
+    {
+      "day": "2022-04-05",
+      "id": 10
+    },
+    {
+      "day": "2022-04-02",
+      "id": 11
+    },
+    {
+      "day": "2022-04-25",
+      "id": 12
     }
   ],
-
   "users": [
     {
       "username": "jacek.kowalski",
@@ -206,8 +221,7 @@
       "lastName": "Kowalski",
       "password": "test111"
     }
-    ],
-
+  ],
   "defaultDeclarations": [
     [
       {
@@ -231,5 +245,5 @@
         "declarationType": "OFFICE"
       }
     ]
-    ]
+  ]
 }

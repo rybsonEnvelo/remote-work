@@ -9,6 +9,7 @@ import plLocale from '@fullcalendar/core/locales/pl';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { CalendarEvent } from '../shared/Interfaces/CalendarEvent.model';
+import { ApiService } from '../shared/services/api.service';
 import { MainModalComponent } from './main-modal/main-modal.component';
 import { UserDeclarationsService } from './user-declarations.service';
 
@@ -24,7 +25,8 @@ export class MainComponent implements OnInit {
 
   constructor(
     private userDeclarationsService: UserDeclarationsService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private apiService: ApiService
   ) {}
 
   ngOnInit(): void {
@@ -33,11 +35,17 @@ export class MainComponent implements OnInit {
         this.calendarEvents = events;
         this.setCalendarOptions();
       }
-    });
 
-    this.userDeclarationsService.daysOff$.subscribe(
-      (dates) => (this.disallowedDays = dates)
-    );
+      this.apiService
+        .getConfigResponse2({ username: 'user1', password: 'password' })
+        .subscribe((resp) => {
+          console.log(resp);
+        });
+
+      this.userDeclarationsService.daysOff$.subscribe(
+        (dates) => (this.disallowedDays = dates)
+      );
+    });
   }
 
   setCalendarOptions() {
