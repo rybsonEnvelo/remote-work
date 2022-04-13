@@ -16,109 +16,129 @@
       "declarationType": "ABSENT"
     },
     {
-      "id": 4,
-      "day": "2022-04-17",
-      "declarationType": "REMOTE"
-    },
-    {
-      "day": "2022-04-14",
-      "declarationType": "ABSENT",
-      "id": 5
+      "day": "2022-04-13",
+      "declarationType": "OFFICE",
+      "id": 4
     },
     {
       "day": "2022-04-15",
       "declarationType": "OFFICE",
+      "id": 5
+    },
+    {
+      "day": "2022-04-09",
+      "declarationType": "REMOTE",
       "id": 6
-    },
-    {
-      "day": "2022-04-16",
-      "declarationType": "OFFICE",
-      "id": 7
-    },
-    {
-      "day": "2022-04-13",
-      "declarationType": "OFFICE",
-      "id": 8
-    },
-    {
-      "day": "2022-04-05",
-      "declarationType": "ABSENT",
-      "id": 9
-    },
-    {
-      "day": "2022-04-06",
-      "declarationType": "OFFICE",
-      "id": 10
-    },
-    {
-      "day": "2022-04-07",
-      "declarationType": "OFFICE",
-      "id": 11
-    },
-    {
-      "day": "2022-04-08",
-      "declarationType": "OFFICE",
-      "id": 12
     },
     {
       "day": "2022-04-26",
       "declarationType": "OFFICE",
-      "id": 13
+      "id": 7
     },
     {
-      "day": "2022-04-21",
+      "day": "2022-04-08",
       "declarationType": "OFFICE",
-      "id": 14
+      "id": 8
+    },
+    {
+      "day": "2022-04-08",
+      "declarationType": "ABSENT",
+      "id": 9
+    },
+    {
+      "day": "2022-04-08",
+      "declarationType": "REMOTE",
+      "id": 10
+    },
+    {
+      "day": "2022-04-03",
+      "declarationType": "OFFICE",
+      "id": 11
+    },
+    {
+      "day": "2022-04-03",
+      "declarationType": "REMOTE",
+      "id": 12
+    },
+    {
+      "day": "2022-04-27",
+      "declarationType": "ABSENT",
+      "id": 13
     },
     {
       "day": "2022-04-10",
       "declarationType": "REMOTE",
+      "id": 14
+    },
+    {
+      "day": "2022-04-24",
+      "declarationType": "OFFICE",
       "id": 15
     },
     {
-      "day": "2022-04-23",
-      "declarationType": "OFFICE",
+      "day": "2022-04-09",
+      "declarationType": "ABSENT",
       "id": 16
     },
     {
-      "day": "2022-04-12",
-      "declarationType": "OFFICE",
+      "day": "2022-04-16",
+      "declarationType": "REMOTE",
       "id": 17
     },
     {
-      "day": "2022-03-30",
-      "declarationType": "ABSENT",
+      "day": "2022-04-17",
+      "declarationType": "REMOTE",
       "id": 18
     },
     {
-      "day": "2022-03-31",
-      "declarationType": "ABSENT",
+      "day": "2022-04-14",
+      "declarationType": "OFFICE",
       "id": 19
     },
     {
-      "day": "2022-04-20",
-      "declarationType": "REMOTE",
+      "day": "2022-04-12",
+      "declarationType": "ABSENT",
       "id": 20
     },
     {
       "day": "2022-04-11",
-      "declarationType": "OFFICE",
+      "declarationType": "REMOTE",
       "id": 21
     },
     {
-      "day": "2022-04-20",
-      "declarationType": "OFFICE",
+      "day": "2022-04-07",
+      "declarationType": "REMOTE",
       "id": 22
     },
     {
-      "day": "2022-04-28",
-      "declarationType": "OFFICE",
+      "day": "2022-04-11",
+      "declarationType": "REMOTE",
       "id": 23
     },
     {
-      "day": "2022-04-29",
-      "declarationType": "ABSENT",
+      "day": "2022-04-07",
+      "declarationType": "REMOTE",
       "id": 24
+    },
+    {
+      "day": "2022-04-19",
+      "declarationType": "OFFICE",
+      "id": 25
+    },
+    {
+      "day": "2022-04-18",
+      "declarationType": "ABSENT",
+      "id": 26
+    },
+    {
+      "day": "2022-04-06",
+      "declarationType": "ABSENT",
+      "id": 27
+    },
+    {
+      "day": "2022-04-07",
+      "declarationType": "OFFICE",
+      "id": 28
     }
   ],
   "summary": [
@@ -147,16 +167,17 @@
       "absent": 8
     }
   ],
-  "defaultDeclarations": [
+  "daysoff": [
     {
-      "mondayDeclaration": "OFFICE",
-      "tuesdayDeclaration": "REMOTE",
-      "wednesdayDeclaration": "REMOTE",
-      "thursdayDeclaration": "REMOTE",
-      "fridayDeclaration": "OFFICE",
-      "id": 1
+      "id": 1,
+      "day": "2022-04-28"
+    },
+    {
+      "id": 3,
+      "day": "2022-04-29"
     }
   ],
+
   "users": [
     {
       "username": "jacek.kowalski",
@@ -165,5 +186,30 @@
       "lastName": "Kowalski",
       "password": "test111"
     }
-  ]
+    ],
+
+  "defaultDeclarations": [
+    [
+      {
+        "day": "monday",
+        "declarationType": "OFFICE"
+      },
+      {
+        "day": "tuesday",
+        "declarationType": "REMOTE"
+      },
+      {
+        "day": "wednesday",
+        "declarationType": "REMOTE"
+      },
+      {
+        "day": "thursday",
+        "declarationType": "OFFICE"
+      },
+      {
+        "day": "friday",
+        "declarationType": "OFFICE"
+      }
+    ]
+    ]
 }

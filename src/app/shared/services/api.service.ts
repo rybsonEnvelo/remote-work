@@ -19,10 +19,16 @@ export class ApiService {
     return this.http.get<Summary>(`${this.API_URL}summary`);
   }
 
-  postDefultDeclarations(defaultDeclaration: DefaultDeclaration) {
+  getDefaultDeclarations() {
+    return this.http.get<DefaultDeclaration[][]>(
+      `${this.API_URL}defaultdeclarations`
+    );
+  }
+
+  postDefultDeclarations(defaultDeclarations: DefaultDeclaration[]) {
     return this.http.post(
       `${this.API_URL}defaultdeclarations`,
-      defaultDeclaration
+      defaultDeclarations
     );
   }
 
@@ -31,5 +37,14 @@ export class ApiService {
       `${this.API_URL}declarations`,
       declaration
     );
+  }
+
+  getDaysOff() {
+    return this.http.get<
+      {
+        id: number;
+        day: string;
+      }[]
+    >(`${this.API_URL}daysoff`);
   }
 }

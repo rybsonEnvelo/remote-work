@@ -1,7 +1,11 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Calendar, CalendarOptions } from '@fullcalendar/core';
+import {
+  Calendar,
+  CalendarOptions,
+  DateSelectArg,
+  DateSpanApi,
+} from '@fullcalendar/core';
 import plLocale from '@fullcalendar/core/locales/pl';
-import { DateClickArg } from '@fullcalendar/interaction';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { CalendarEvent } from '../shared/Interfaces/CalendarEvent.model';
@@ -13,10 +17,10 @@ import { UserDeclarationsService } from './user-declarations.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
-export class MainComponent implements OnInit, OnDestroy {
+export class MainComponent implements OnInit {
   public calendarOptions!: CalendarOptions;
   private calendarEvents!: CalendarEvent[];
-  private declarationsSubscription!: Subscription;
+  private disallowedDays: string[] = [];
 
   constructor(
     private userDeclarationsService: UserDeclarationsService,
@@ -30,10 +34,10 @@ export class MainComponent implements OnInit, OnDestroy {
         this.setCalendarOptions();
       }
     });
-  }
 
-  ngOnDestroy(): void {
-    this.declarationsSubscription.unsubscribe();
+    this.userDeclarationsService.daysOff$.subscribe(
+      (dates) => (this.disallowedDays = dates)
+    );
   }
 
   setCalendarOptions() {
@@ -42,19 +46,40 @@ export class MainComponent implements OnInit, OnDestroy {
       locale: 'pl',
       locales: [plLocale],
       height: 650,
+      selectable: true,
       events: [...this.calendarEvents],
-      dateClick: this.open.bind(this),
       showNonCurrentDates: false,
       fixedWeekCount: false,
+      select: (args) => {
+        console.log(args);
+        if (this.hasDateEvents(args.startStr))
+          this.addDeclaration(args.startStr);
+      },
+      selectAllow: (selectInfo) => {
+        return this.disallowDays(selectInfo);
+      },
     };
   }
 
-  open(args: DateClickArg) {
-    const modalRef = this.modalService.open(MainModalComponent);
-    const formattedDate = `${args.date.getFullYear()}-${
-      args.date.getMonth() + 1
-    }-${args.date.getDate()}`.replace(/(^|\D)(\d)(?!\d)/g, '$10$2');
+  disallowDays(selectInfo: DateSpanApi) {
+    return this.disallowedDays.includes(selectInfo.startStr) ? false : true;
+  }
 
-    modalRef.componentInstance.date = formattedDate;
+  addDeclaration(date: string) {
+    const modalRef = this.modalService.open(MainModalComponent);
+    modalRef.componentInstance.date = date;
+  }
+
+  editDeclaration(date: string) {
+    const modalRef = this.modalService.open(MainModalComponent);
+    modalRef.componentInstance.date = date;
+    modalRef.componentInstance.currentEvent = this.calendarEvents.filter(
+      (e) => e.date === date
+    )[0];
+  }
+
+  hasDateEvents(date: string) {
+    const dates = this.calendarEvents.map((e) => e.date);
+    return dates.includes(date) ? false : true;
   }
 }

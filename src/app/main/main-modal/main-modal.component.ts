@@ -1,6 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarEvent } from 'src/app/shared/Interfaces/CalendarEvent.model';
 import { UserDeclarationsService } from '../user-declarations.service';
 
 @Component({
@@ -10,6 +19,7 @@ import { UserDeclarationsService } from '../user-declarations.service';
 })
 export class MainModalComponent implements OnInit {
   @Input() date = '';
+  @Input() currentEvent?: CalendarEvent;
   form!: FormGroup;
 
   get select() {
@@ -26,6 +36,8 @@ export class MainModalComponent implements OnInit {
     this.form = this.formBuilder.group({
       select: [null, Validators.required],
     });
+
+    if (this.currentEvent) this.select?.setValue(this.currentEvent.type);
   }
 
   close() {
