@@ -40,6 +40,11 @@ export class ApiService {
   }
 
   getDaysOff() {
-    return this.http.get<string[]>(`${this.API_URL}daysoff`);
+    return this.http.get<
+      {
+        id: number;
+        day: string;
+      }[]
+    >(`${this.API_URL}daysoff`);
   }
 }

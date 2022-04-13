@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { DaysOffComponent } from './days-off/days-off.component';
+import { ModalOffComponent } from './days-off/modal-off/modal-off.component';
 
 const routes = [
   { path: '', component: MainComponent },
@@ -40,6 +41,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     SettingsComponent,
     MainModalComponent,
     DaysOffComponent,
+    ModalOffComponent,
   ],
   imports: [
     BrowserModule,
