@@ -156,5 +156,14 @@
       "fridayDeclaration": "OFFICE",
       "id": 1
     }
+  ],
+  "users": [
+    {
+      "username": "jacek.kowalski",
+      "email": "jacek.kowalski@envelo.pl",
+      "firstName": "Jacek",
+      "lastName": "Kowalski",
+      "password": "test111"
+    }
   ]
 }

@@ -25,6 +25,7 @@ export class ApiService {
       defaultDeclaration
     );
   }
+
   addUserDeclaration(declaration: Partial<Declaration>) {
     return this.http.post<Declaration>(
       `${this.API_URL}declarations`,
