@@ -1,25 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col"></div>
-    <div class="col-6" style="padding-top: 40px">
-      <h3 style="text-align: center; padding-bottom: 20px">
+    <div class="col-6" style="text-align: center; padding-top: 20px;">
+      <h3>
         Ustaw domyślne dni zdalne i stacjonarne
       </h3>
       <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">Dzień tygodnia</th>
-            <th scope="col">Praca zdalna/Praca stacjonarna</th>
+            <th style="text-align: center" class="col">Praca zdalna/Praca stacjonarna</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
-              poniedzialek<br />
-              wtorek<br />
-              sroda<br />
-              czwartek<br />
-              piatek<br />
+              Poniedzialek<br />
+              <br>
+              Wtorek<br />
+              <br>
+              Środa<br />
+              <br>
+              Czwartek<br />
+              <br>
+              Piatek<br />
             </td>
             <td>
               <form [formGroup]="form">
@@ -32,6 +36,7 @@
                     id="flexSwitchCheckDefault"
                   />
                 </div>
+                <br>
                 <div class="form-check form-switch">
                   <input
                     formControlName="tuesday"
@@ -41,6 +46,7 @@
                     id="flexSwitchCheckDefault"
                   />
                 </div>
+                <br>
                 <div class="form-check form-switch">
                   <input
                     formControlName="wednesday"
@@ -50,6 +56,7 @@
                     id="flexSwitchCheckDefault"
                   />
                 </div>
+                <br>
                 <div class="form-check form-switch">
                   <input
                     formControlName="thursday"
@@ -59,6 +66,7 @@
                     id="flexSwitchCheckDefault"
                   />
                 </div>
+                <br>
                 <div class="form-check form-switch">
                   <input
                     formControlName="friday"
@@ -74,7 +82,7 @@
         </tbody>
       </table>
 
-      <button (click)="sendDefaultDeclarations()">Send</button>
+      <button class="btn btn-danger" (click)="sendDefaultDeclarations()">Send</button>
     </div>
     <div class="col"></div>
   </div>

@@ -139,6 +139,21 @@
       "day": "2022-04-07",
       "declarationType": "OFFICE",
       "id": 28
+    },
+    {
+      "day": "2022-04-21",
+      "declarationType": "OFFICE",
+      "id": 29
+    },
+    {
+      "day": "2022-04-16",
+      "declarationType": "REMOTE",
+      "id": 30
+    },
+    {
+      "day": "2022-04-23",
+      "declarationType": "ABSENT",
+      "id": 31
     }
   ],
   "summary": [
@@ -211,6 +226,10 @@
     {
       "day": "2022-04-25",
       "id": 12
+    },
+    {
+      "day": "2022-04-12",
+      "id": 13
     }
   ],
   "users": [

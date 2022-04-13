@@ -1,24 +1,36 @@
-<h1 style="text-align: center">Podsumowanie</h1>
 
-<app-filter></app-filter>
 
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">Data</th>
-    <th scope="col">Deklaracja stacjonarna</th>
-    <th scope="col">Deklaracja zdalna</th>
-    <th scope="col">Nieobecni</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let summary of summaryInformations; index as i">
-    <td>
-      {{ summary.date }}
-    </td>
-    <td>{{ summary.office | number }}</td>
-    <td>{{ summary.remote | number }}</td>
-    <td>{{ summary.absent | number }}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6">
+      <h1 style="text-align: center; padding-top: 15px; padding-bottom: 30px;">Podsumowanie</h1>
+
+      <app-filter></app-filter>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Data</th>
+          <th scope="col">Deklaracja stacjonarna</th>
+          <th scope="col">Deklaracja zdalna</th>
+          <th scope="col">Nieobecni</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let summary of summaryInformations; index as i">
+          <td>
+            {{ summary.date }}
+          </td>
+          <td>{{ summary.office | number }}</td>
+          <td>{{ summary.remote | number }}</td>
+          <td>{{ summary.absent | number }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
