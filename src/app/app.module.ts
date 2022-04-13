@@ -19,15 +19,26 @@ import { MainModalComponent } from './main/main-modal/main-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { DaysOffComponent } from './days-off/days-off.component';
 import { ModalOffComponent } from './days-off/modal-off/modal-off.component';
 
 const routes = [
-  { path: '', component: MainComponent },
-  { path: 'summary', component: SummaryComponent },
-  { path: 'freedays', component: DaysOffComponent },
-  { path: 'declarations', component: MainComponent },
-  { path: 'settings', component: SettingsComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: 'main', component: MainComponent },
+      { path: 'summary', component: SummaryComponent },
+      { path: 'freedays', component: DaysOffComponent },
+      { path: 'declarations', component: MainComponent },
+      { path: 'settings', component: SettingsComponent },
+    ],
+  },
 ];
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
@@ -40,6 +51,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     FilterComponent,
     SettingsComponent,
     MainModalComponent,
+    LoginComponent,
+    DashboardComponent,
     DaysOffComponent,
     ModalOffComponent,
   ],

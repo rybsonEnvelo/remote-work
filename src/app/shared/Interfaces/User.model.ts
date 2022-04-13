@@ -7,9 +7,10 @@ export interface User {
   email: string;
   firstName: string;
   lastName: string;
-  department: Departament;
-  title: string;
-  defaultDeclaration: DefaultDeclaration;
-  subordinates: string[];
-  roles: Role[];
+  password: string;
+  // department: Departament;
+  // title: string;
+  // defaultDeclaration: DefaultDeclaration;
+  // subordinates: string[];
+  // roles: Role[];
 }
