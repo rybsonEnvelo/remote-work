@@ -5,6 +5,7 @@ import { MainModalComponent } from '../main/main-modal/main-modal.component';
 import { CalendarEvent } from '../shared/Interfaces/CalendarEvent.model';
 import plLocale from '@fullcalendar/core/locales/pl';
 import { ModalOffComponent } from './modal-off/modal-off.component';
+import { DaysOffService } from './days-off.service';
 
 @Component({
   selector: 'app-days-off',
@@ -13,13 +14,23 @@ import { ModalOffComponent } from './modal-off/modal-off.component';
 })
 export class DaysOffComponent implements OnInit {
   public calendarOptions!: CalendarOptions;
-  private calendarEvents!: CalendarEvent[];
   private disallowedDays: string[] = [];
+  private daysOff!: {
+    date: string;
+    display: string;
+    backgroundColor: string;
+  }[];
 
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal,
+    private daysOffService: DaysOffService
+  ) {}
 
   ngOnInit(): void {
-    this.setCalendarOptions();
+    this.daysOffService.daysOff$.subscribe((e) => {
+      this.daysOff = e;
+      this.setCalendarOptions();
+    });
   }
 
   setCalendarOptions() {
@@ -29,12 +40,11 @@ export class DaysOffComponent implements OnInit {
       locales: [plLocale],
       height: 650,
       selectable: true,
-      // events: [...this.calendarEvents],
+      events: [...this.daysOff],
       showNonCurrentDates: false,
       fixedWeekCount: false,
       select: (args) => {
-        // if (this.hasDateEvents(args.startStr))
-        this.addDeclaration(args.startStr);
+        if (this.hasDateEvents(args.startStr)) this.addDayOff(args.startStr);
       },
       // selectAllow: (selectInfo) => {
       //   return this.disallowDays(selectInfo);
@@ -46,13 +56,13 @@ export class DaysOffComponent implements OnInit {
     return this.disallowedDays.includes(selectInfo.startStr) ? false : true;
   }
 
-  addDeclaration(date: string) {
+  addDayOff(date: string) {
     const modalRef = this.modalService.open(ModalOffComponent);
     modalRef.componentInstance.date = date;
   }
 
   hasDateEvents(date: string) {
-    const dates = this.calendarEvents.map((e) => e.date);
+    const dates = this.daysOff.map((e) => e.date);
     return dates.includes(date) ? false : true;
   }
 }

@@ -47,4 +47,8 @@ export class ApiService {
       }[]
     >(`${this.API_URL}daysoff`);
   }
+
+  addDayOff(dayOff: { day: string }) {
+    return this.http.post<{ day: string }>(`${this.API_URL}daysoff`, dayOff);
+  }
 }
