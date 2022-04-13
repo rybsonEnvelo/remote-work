@@ -16,144 +16,19 @@
       "declarationType": "ABSENT"
     },
     {
-      "day": "2022-04-13",
-      "declarationType": "OFFICE",
+      "day": "2022-04-07",
+      "declarationType": "REMOTE",
       "id": 4
     },
     {
-      "day": "2022-04-15",
+      "day": "2022-04-08",
       "declarationType": "OFFICE",
       "id": 5
     },
     {
-      "day": "2022-04-09",
-      "declarationType": "REMOTE",
+      "day": "2022-04-07",
+      "declarationType": "ABSENT",
       "id": 6
-    },
-    {
-      "day": "2022-04-26",
-      "declarationType": "OFFICE",
-      "id": 7
-    },
-    {
-      "day": "2022-04-08",
-      "declarationType": "OFFICE",
-      "id": 8
-    },
-    {
-      "day": "2022-04-08",
-      "declarationType": "ABSENT",
-      "id": 9
-    },
-    {
-      "day": "2022-04-08",
-      "declarationType": "REMOTE",
-      "id": 10
-    },
-    {
-      "day": "2022-04-03",
-      "declarationType": "OFFICE",
-      "id": 11
-    },
-    {
-      "day": "2022-04-03",
-      "declarationType": "REMOTE",
-      "id": 12
-    },
-    {
-      "day": "2022-04-27",
-      "declarationType": "ABSENT",
-      "id": 13
-    },
-    {
-      "day": "2022-04-10",
-      "declarationType": "REMOTE",
-      "id": 14
-    },
-    {
-      "day": "2022-04-24",
-      "declarationType": "OFFICE",
-      "id": 15
-    },
-    {
-      "day": "2022-04-09",
-      "declarationType": "ABSENT",
-      "id": 16
-    },
-    {
-      "day": "2022-04-16",
-      "declarationType": "REMOTE",
-      "id": 17
-    },
-    {
-      "day": "2022-04-17",
-      "declarationType": "REMOTE",
-      "id": 18
-    },
-    {
-      "day": "2022-04-14",
-      "declarationType": "OFFICE",
-      "id": 19
-    },
-    {
-      "day": "2022-04-12",
-      "declarationType": "ABSENT",
-      "id": 20
-    },
-    {
-      "day": "2022-04-11",
-      "declarationType": "REMOTE",
-      "id": 21
-    },
-    {
-      "day": "2022-04-07",
-      "declarationType": "REMOTE",
-      "id": 22
-    },
-    {
-      "day": "2022-04-11",
-      "declarationType": "REMOTE",
-      "id": 23
-    },
-    {
-      "day": "2022-04-07",
-      "declarationType": "REMOTE",
-      "id": 24
-    },
-    {
-      "day": "2022-04-19",
-      "declarationType": "OFFICE",
-      "id": 25
-    },
-    {
-      "day": "2022-04-18",
-      "declarationType": "ABSENT",
-      "id": 26
-    },
-    {
-      "day": "2022-04-06",
-      "declarationType": "ABSENT",
-      "id": 27
-    },
-    {
-      "day": "2022-04-07",
-      "declarationType": "OFFICE",
-      "id": 28
-    },
-    {
-      "day": "2022-04-21",
-      "declarationType": "OFFICE",
-      "id": 29
-    },
-    {
-      "day": "2022-04-16",
-      "declarationType": "REMOTE",
-      "id": 30
-    },
-    {
-      "day": "2022-04-23",
-      "declarationType": "ABSENT",
-      "id": 31
     }
   ],
   "summary": [
@@ -184,52 +59,12 @@
   ],
   "daysoff": [
     {
-      "id": 1,
-      "day": "2022-04-28"
-    },
-    {
-      "id": 3,
-      "day": "2022-04-29"
-    },
-    {
-      "day": "2022-04-08",
-      "id": 4
-    },
-    {
-      "day": "2022-04-09",
-      "id": 5
-    },
-    {
-      "day": "2022-04-07",
-      "id": 6
-    },
-    {
-      "day": "2022-04-01",
-      "id": 7
-    },
-    {
-      "day": "2022-04-03",
-      "id": 8
-    },
-    {
-      "day": "2022-04-06",
-      "id": 9
+      "day": "2022-04-04",
+      "id": 1
     },
     {
       "day": "2022-04-05",
-      "id": 10
-    },
-    {
-      "day": "2022-04-02",
-      "id": 11
-    },
-    {
-      "day": "2022-04-25",
-      "id": 12
-    },
-    {
-      "day": "2022-04-12",
-      "id": 13
+      "id": 2
     }
   ],
   "users": [
