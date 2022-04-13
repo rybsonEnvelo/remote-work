@@ -1,27 +1,45 @@
-
-
 <div class="modal-header">
-  <h4 class="modal-title">{{ date }}</h4>
+  <div class="container">
+    <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6" style="text-align: center;">
+      <h4 class="modal-title">{{ date }}</h4>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+
 </div>
 <div class="modal-body">
-  <form [formGroup]="form">
+  <div class="container">
     <div class="row">
-      <select formControlName="select" class="form-select">
-        <option [ngValue]="null">Wybierz rodzaj pracy</option>
-        <option value="REMOTE">Zdalnie</option>
-        <option value="OFFICE">Stacjonarnie</option>
-        <option value="ABSENT">Nieobecny</option>
-      </select>
+    <div class="col">
     </div>
-    <div class="modal-footer">
-      <button
-        type="button"
-        [disabled]="!form.valid"
-        class="btn btn-outline-dark"
-        (click)="close()"
-      >
-        Zapisz
-      </button>
+    <div class="col-6">
+      <form [formGroup]="form">
+        <div class="row" style="padding-bottom: 15px">
+          <select formControlName="select" class="form-select">
+            <option [ngValue]="null">Wybierz rodzaj pracy</option>
+            <option value="REMOTE">Zdalnie</option>
+            <option value="OFFICE">Stacjonarnie</option>
+            <option value="ABSENT">Nieobecny</option>
+          </select>
+        </div>
+      </form>
     </div>
-  </form>
+    <div class="col">
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    [disabled]="!form.valid"
+    class="btn btn-danger"
+    (click)="close()"
+  >
+    Zapisz
+  </button>
 </div>

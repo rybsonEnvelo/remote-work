@@ -1,36 +1,44 @@
-<div class="container">
-  <div class="row">
-    <div class="col"></div>
-    <div class="col-6" style="padding-top: 40px; padding-bottom: 40px">
-      <h3 style="text-align: center; padding-bottom: 20px">
-        {{ date }}
-      </h3>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Dzień pracujący</th>
-            <th scope="col">Dzień wolny</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="form-check form-switch">
-                <input
-                  [formControl]="toggle"
-                  class="form-check-input"
-                  type="checkbox"
-                  role="switch"
-                  id="flexSwitchCheckDefault"
-                />
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <button>Send</button>
+<div class="modal-header">
+  <div class="container">
+    <div class="row">
+    <div class="col">
     </div>
-    <div class="col"></div>
+    <div class="col-6" style="text-align: center;">
+      <h4 class="modal-title">{{ date }}</h4>
+    </div>
+    <div class="col">
+    </div>
   </div>
+</div>
+
+</div>
+<div class="modal-body">
+  <div class="container">
+    <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6">
+      <p style="display:flex; justify-content: center;">Praca/Wolne</p>
+      <div style="display:flex; justify-content: center; padding-bottom: 20px;" class="form-check form-switch">
+        <input
+          [formControl]="toggle"
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+      </div>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-danger"
+    (click)="close()"
+  >
+    Zapisz
+  </button>
 </div>
